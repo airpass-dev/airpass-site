@@ -1,0 +1,99 @@
+:root {
+  --bg-deep: #12121f;
+  --bg-primary: #1a1a2e;
+  --bg-elevated: #20203a;
+  --surface-1: rgba(255, 255, 255, 0.045);
+  --surface-2: rgba(255, 255, 255, 0.08);
+  --border-1: rgba(255, 255, 255, 0.08);
+  --border-2: rgba(255, 255, 255, 0.14);
+
+  --text-primary: #f0f1f8;
+  --text-secondary: #c3c7da;
+  --text-tertiary: #8d92ad;
+
+  --accent: #667eea;
+  --accent-hover: #8b9cf7;
+  --accent-secondary: #764ba2;
+  --accent-soft: rgba(102, 126, 234, 0.12);
+  --accent-border: rgba(102, 126, 234, 0.45);
+
+  --radius: 12px;
+  --max-width: 1040px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-deep: #f4f5fa;
+    --bg-primary: #ffffff;
+    --bg-elevated: #ffffff;
+    --surface-1: rgba(18, 18, 31, 0.03);
+    --surface-2: rgba(18, 18, 31, 0.06);
+    --border-1: rgba(18, 18, 31, 0.1);
+    --border-2: rgba(18, 18, 31, 0.16);
+
+    --text-primary: #16172a;
+    --text-secondary: #414461;
+    --text-tertiary: #6b6f8c;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo',
+    'Malgun Gothic', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.lang-toggle {
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  background: var(--surface-1);
+  border: 1px solid var(--border-1);
+  border-radius: 999px;
+}
+
+.lang-toggle button {
+  padding: 6px 14px;
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.lang-toggle button.is-active {
+  color: var(--text-primary);
+  background: var(--surface-2);
+}
