@@ -1,3 +1,5 @@
+import type { PlatformKey } from './assets'
+
 export type DetectedOS = 'mac' | 'windows' | 'linux' | 'unknown'
 
 /**
@@ -17,4 +19,12 @@ export function detectOS(userAgent: string): DetectedOS {
   if (ua.includes('linux') || ua.includes('x11')) return 'linux'
 
   return 'unknown'
+}
+
+/** macOS lists both architectures: the browser cannot tell them apart reliably. */
+export const PLATFORMS_FOR_OS: Record<DetectedOS, PlatformKey[]> = {
+  mac: ['mac-arm64', 'mac-x64'],
+  windows: ['win'],
+  linux: ['linux-appimage', 'linux-deb'],
+  unknown: []
 }

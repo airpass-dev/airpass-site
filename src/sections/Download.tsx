@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
 import type { PlatformKey } from '../lib/assets'
-import type { DetectedOS } from '../lib/platform'
-import { detectOS } from '../lib/platform'
+import { detectOS, PLATFORMS_FOR_OS } from '../lib/platform'
 import { release } from '../lib/release'
 import { useLocale } from '../i18n/LocaleContext'
 import DownloadButton from '../components/DownloadButton'
@@ -13,14 +12,6 @@ const ALL_PLATFORMS: PlatformKey[] = [
   'linux-appimage',
   'linux-deb'
 ]
-
-/** macOS lists both architectures: the browser cannot tell them apart reliably. */
-export const PLATFORMS_FOR_OS: Record<DetectedOS, PlatformKey[]> = {
-  mac: ['mac-arm64', 'mac-x64'],
-  windows: ['win'],
-  linux: ['linux-appimage', 'linux-deb'],
-  unknown: []
-}
 
 const RELEASES_URL = 'https://github.com/airpass-dev/airpass-site/releases'
 

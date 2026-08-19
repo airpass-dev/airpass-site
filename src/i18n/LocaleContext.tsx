@@ -11,8 +11,13 @@ const STORAGE_KEY = 'airpass-site-locale'
 
 function initialLocale(): Locale {
   if (typeof window === 'undefined') return 'ko'
-  const saved = window.localStorage.getItem(STORAGE_KEY)
-  if (saved === 'ko' || saved === 'en') return saved
+  try {
+    const saved = window.localStorage.getItem(STORAGE_KEY)
+    if (saved === 'ko' || saved === 'en') return saved
+  } catch {
+    // localStorage can throw (e.g. SecurityError when a visitor blocks all
+    // cookies/site data). Fall through to language detection.
+  }
   return navigator.language.toLowerCase().startsWith('ko') ? 'ko' : 'en'
 }
 
@@ -28,7 +33,11 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(initialLocale)
 
   useEffect(() => {
-    window.localStorage.setItem(STORAGE_KEY, locale)
+    try {
+      window.localStorage.setItem(STORAGE_KEY, locale)
+    } catch {
+      // Same SecurityError as above — the UI still works without persistence.
+    }
     document.documentElement.lang = locale
   }, [locale])
 

@@ -3,6 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Mirrors src/i18n/LocaleContext.tsx's initialLocale() so <html lang>
+      // is correct before React hydrates, instead of flashing "ko" for
+      // English-locale visitors. Errors (e.g. localStorage blocked) fall
+      // back to the static "ko" default already on the tag.
+      try {
+        var savedLocale = localStorage.getItem('airpass-site-locale')
+        document.documentElement.lang =
+          savedLocale === 'ko' || savedLocale === 'en'
+            ? savedLocale
+            : navigator.language.toLowerCase().startsWith('ko')
+              ? 'ko'
+              : 'en'
+      } catch (e) {}
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>AirPass — 같은 Wi-Fi에서 기기 간 파일 전송</title>
     <meta name="description" content="IP 주소 입력 없이, 주변 기기로 파일을 바로 보냅니다. Windows · macOS · Linux." />
