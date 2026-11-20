@@ -4,6 +4,7 @@ import { detectOS, PLATFORMS_FOR_OS } from '../lib/platform'
 import { release } from '../lib/release'
 import { useLocale } from '../i18n/LocaleContext'
 import DownloadButton from '../components/DownloadButton'
+import { ChevronRight } from '../components/Icons'
 
 const ALL_PLATFORMS: PlatformKey[] = [
   'mac-arm64',
@@ -24,51 +25,54 @@ export default function Download() {
   const assetFor = (platform: PlatformKey) =>
     release.assets.find((asset) => asset.platform === platform)
 
-  if (!release.available) {
-    return (
-      <section id="download" className="section">
-        <h2>{t('download.title')}</h2>
-        <p className="muted">{t('download.unavailable')}</p>
-        <a className="dl-card is-primary" href={RELEASES_URL}>
-          {t('download.releasesLink')} →
-        </a>
-      </section>
-    )
-  }
-
   const primary = PLATFORMS_FOR_OS[os]
   const rest = ALL_PLATFORMS.filter((p) => !primary.includes(p))
 
   return (
-    <section id="download" className="section">
-      <h2>{t('download.title')}</h2>
-      <p className="muted">
-        {t('download.version')} {release.version}
-      </p>
+    <section className="section section--mist" id="download">
+      <div className="container">
+        <h2 className="headline">{t('download.title')}</h2>
+        <p className="intro">
+          {release.available
+            ? `${t('download.subtitle')} ${t('download.version')} ${release.version}`
+            : t('download.subtitle')}
+        </p>
 
-      {primary.length > 0 && (
-        <div className="dl-grid">
-          {primary.map((platform) => (
-            <DownloadButton
-              key={platform}
-              platform={platform}
-              url={assetFor(platform)?.url}
-              size={assetFor(platform)?.size}
-              primary
-            />
-          ))}
-        </div>
-      )}
-
-      <div className="dl-grid dl-grid--secondary">
-        {rest.map((platform) => (
-          <DownloadButton
-            key={platform}
-            platform={platform}
-            url={assetFor(platform)?.url}
-            size={assetFor(platform)?.size}
-          />
-        ))}
+        {!release.available ? (
+          <div className="dl-empty">
+            <p>{t('download.unavailable')}</p>
+            <a className="link" href={RELEASES_URL}>
+              {t('download.releasesLink')}
+              <ChevronRight />
+            </a>
+          </div>
+        ) : (
+          <>
+            {primary.length > 0 && (
+              <div className="dl-grid dl-grid--primary">
+                {primary.map((platform) => (
+                  <DownloadButton
+                    key={platform}
+                    platform={platform}
+                    url={assetFor(platform)?.url}
+                    size={assetFor(platform)?.size}
+                    primary
+                  />
+                ))}
+              </div>
+            )}
+            <div className="dl-grid">
+              {rest.map((platform) => (
+                <DownloadButton
+                  key={platform}
+                  platform={platform}
+                  url={assetFor(platform)?.url}
+                  size={assetFor(platform)?.size}
+                />
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </section>
   )

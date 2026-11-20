@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
-import BrandLogo from '../components/BrandLogo'
 import HeroVisual from './HeroVisual'
-import LangToggle from '../components/LangToggle'
+import { ChevronRight } from '../components/Icons'
 import { useLocale } from '../i18n/LocaleContext'
 import { detectOS, PLATFORMS_FOR_OS } from '../lib/platform'
 import { release } from '../lib/release'
@@ -28,34 +27,26 @@ export default function Hero() {
   }, [os])
 
   return (
-    <header className="hero">
-      <nav className="hero-nav">
-        <BrandLogo size={36} />
-        <span className="wordmark">AirPass</span>
-        <div className="spacer" />
-        <LangToggle />
-      </nav>
-
-      <div className="hero-body">
-        <div>
-          <h1>{t('hero.title')}</h1>
-          <p className="lead">{t('hero.subtitle')}</p>
-          <div className="hero-cta">
-            <a className="dl-card is-primary" href={primaryUrl}>
-              {t('nav.download')} →
-            </a>
-            <a className="hero-cta-secondary" href="#download">
-              {t('hero.cta.all')}
-            </a>
-          </div>
-          {release.available && (
-            <p className="hero-version muted">
-              {t('download.version')} {release.version}
-            </p>
-          )}
+    <section className="hero" id="top">
+      <div className="hero-copy">
+        <h1 className="hero-title">{t('hero.title')}</h1>
+        <p className="hero-lead">{t('hero.subtitle')}</p>
+        <div className="hero-actions">
+          <a className="btn" href={primaryUrl}>
+            {t('hero.cta.download')}
+          </a>
+          <a className="link" href="#compare">
+            {t('hero.cta.compare')}
+            <ChevronRight />
+          </a>
         </div>
-        <HeroVisual />
+        {release.available && (
+          <p className="hero-version">
+            {t('download.version')} {release.version}
+          </p>
+        )}
       </div>
-    </header>
+      <HeroVisual />
+    </section>
   )
 }

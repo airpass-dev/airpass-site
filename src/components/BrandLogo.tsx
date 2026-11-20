@@ -6,7 +6,7 @@ export default function BrandLogo({ size = 96 }: { size?: number }) {
         height: size,
         borderRadius: size * 0.22,
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        boxShadow: '0 8px 24px rgba(102, 126, 234, 0.35)',
+        boxShadow: `0 ${Math.round(size * 0.08)}px ${Math.round(size * 0.25)}px rgba(102, 126, 234, 0.35)`,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'

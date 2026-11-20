@@ -1,9 +1,10 @@
 import { useLocale } from '../i18n/LocaleContext'
 
+// A real sequence, so the numbers carry meaning.
 const STEPS = [
-  { title: 'how.step1.title', body: 'how.step1.body' },
-  { title: 'how.step2.title', body: 'how.step2.body' },
-  { title: 'how.step3.title', body: 'how.step3.body' }
+  { title: 'steps.1.title', body: 'steps.1.body' },
+  { title: 'steps.2.title', body: 'steps.2.body' },
+  { title: 'steps.3.title', body: 'steps.3.body' }
 ] as const
 
 export default function HowItWorks() {
@@ -11,16 +12,20 @@ export default function HowItWorks() {
 
   return (
     <section className="section">
-      <h2>{t('how.title')}</h2>
-      <ol className="steps">
-        {STEPS.map((step, index) => (
-          <li key={step.title}>
-            <span className="step-num">{index + 1}</span>
-            <h3>{t(step.title)}</h3>
-            <p className="muted">{t(step.body)}</p>
-          </li>
-        ))}
-      </ol>
+      <div className="container">
+        <h2 className="headline">{t('steps.title')}</h2>
+        <ol className="steps">
+          {STEPS.map((step, index) => (
+            <li key={step.title}>
+              <span className="step-num" aria-hidden="true">
+                {index + 1}
+              </span>
+              <h3>{t(step.title)}</h3>
+              <p>{t(step.body)}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
     </section>
   )
 }

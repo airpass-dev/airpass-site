@@ -6,12 +6,17 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <span>© 2026 AirPass. {t('footer.license')}</span>
-      {release.version ? (
-        <span className="muted">
-          {t('footer.version')} {release.version}
-        </span>
-      ) : null}
+      <div className="container">
+        <p>{t('footer.trademark')}</p>
+        <p className="footer-row">
+          <span>© 2026 AirPass. {t('footer.license')}</span>
+          {release.version ? (
+            <span>
+              {t('footer.version')} {release.version}
+            </span>
+          ) : null}
+        </p>
+      </div>
     </footer>
   )
 }

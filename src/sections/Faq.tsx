@@ -1,3 +1,4 @@
+import { PlusIcon } from '../components/Icons'
 import { useLocale } from '../i18n/LocaleContext'
 
 const QUESTIONS = [
@@ -12,16 +13,21 @@ export default function Faq() {
   const { t } = useLocale()
 
   return (
-    <section className="section">
-      <h2>{t('faq.title')}</h2>
-      <dl className="faq">
-        {QUESTIONS.map((item) => (
-          <div key={item.q}>
-            <dt>{t(item.q)}</dt>
-            <dd className="muted">{t(item.a)}</dd>
-          </div>
-        ))}
-      </dl>
+    <section className="section" id="faq">
+      <div className="container container--narrow">
+        <h2 className="headline headline--left">{t('faq.title')}</h2>
+        <div className="faq">
+          {QUESTIONS.map((item) => (
+            <details key={item.q}>
+              <summary>
+                <span>{t(item.q)}</span>
+                <PlusIcon />
+              </summary>
+              <p>{t(item.a)}</p>
+            </details>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
