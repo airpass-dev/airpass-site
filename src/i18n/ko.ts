@@ -40,7 +40,7 @@ export const ko = {
 
   'compare.title': 'AirDrop과 Quick Share가\n닿지 않는 곳까지.',
   'compare.body':
-    'AirDrop은 Apple 기기끼리, Quick Share는 Android, Chromebook, Windows 사이에서 동작합니다. 그래서 한 책상 위에 놓인 Mac과 Windows PC도 파일 하나를 옮기려면 메신저나 USB 메모리를 거쳐야 했습니다. AirPass는 세 운영체제의 컴퓨터를 모두 잇습니다.',
+    'AirDrop은 Apple 기기끼리, Quick Share는 Android, Chromebook, Windows 사이에서 동작합니다. 그래서 한 책상 위에 놓인 Mac과 Windows PC 사이에서는 둘 다 쓸 수 없습니다. AirPass는 세 운영체제의 컴퓨터를 모두 잇습니다.',
   'compare.caption': '제품별 지원 기기',
   'compare.row.mac': 'Mac',
   'compare.row.windows': 'Windows PC',
@@ -68,7 +68,7 @@ export const ko = {
   'features.discovery.body':
     'IP 주소를 찾을 필요가 없습니다. 같은 네트워크의 기기가 알아서 목록에 나타납니다.',
   'features.resume.title': '끊겨도 이어서.',
-  'features.resume.body': '연결이 끊긴 전송은 멈춘 지점부터 다시 이어 받습니다.',
+  'features.resume.body': '중단된 전송은 처음부터 다시 보내지 않고, 멈춘 지점부터 이어 받을 수 있습니다.',
   'features.resume.status': '64%에서 이어 받는 중',
   'features.folders.title': '폴더도 통째로.',
   'features.folders.body': '여러 파일은 물론, 폴더도 한 번에 보낼 수 있습니다.',

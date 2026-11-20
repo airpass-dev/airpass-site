@@ -41,7 +41,7 @@ export const en: Record<keyof typeof ko, string> = {
 
   'compare.title': 'Where AirDrop and\nQuick Share stop.',
   'compare.body':
-    'AirDrop works between Apple devices. Quick Share works between Android, Chromebook, and Windows. So even a Mac and a Windows PC on the same desk have needed a chat app or a USB stick to move a single file. AirPass connects computers on all three operating systems.',
+    'AirDrop works between Apple devices. Quick Share works between Android, Chromebook, and Windows. So between a Mac and a Windows PC on the same desk, neither one works. AirPass connects computers on all three operating systems.',
   'compare.caption': 'Supported devices by product',
   'compare.row.mac': 'Mac',
   'compare.row.windows': 'Windows PC',
@@ -69,7 +69,8 @@ export const en: Record<keyof typeof ko, string> = {
   'features.discovery.body':
     'No IP addresses to look up. Devices on the same network show up in the list on their own.',
   'features.resume.title': 'Picks up where it left off.',
-  'features.resume.body': 'If the connection drops, the transfer resumes from where it stopped.',
+  'features.resume.body':
+    'An interrupted transfer can pick up from where it stopped instead of starting over.',
   'features.resume.status': 'Resuming from 64%',
   'features.folders.title': 'Whole folders.',
   'features.folders.body': 'Send many files, or entire folders, in one go.',
