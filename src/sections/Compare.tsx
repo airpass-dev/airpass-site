@@ -46,7 +46,8 @@ export default function Compare() {
     <section className="section section--mist" id="compare">
       <div className="container">
         <h2 className="headline">{t('compare.title')}</h2>
-        <p className="intro">{t('compare.body')}</p>
+        <p className="intro">{t('compare.lead')}</p>
+        <p className="intro-small">{t('compare.body')}</p>
 
         <div className="cmp-scroll">
           <table className="cmp">

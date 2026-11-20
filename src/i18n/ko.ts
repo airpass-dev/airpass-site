@@ -4,7 +4,7 @@ export const ko = {
   'nav.download': '다운로드',
   'nav.faq': '자주 묻는 질문',
 
-  'hero.title': '어느 OS에서든,\n어느 OS로든.',
+  'hero.title': 'Mac에서 Windows로.\nWindows에서 Mac으로.',
   'hero.subtitle':
     'Mac, Windows, Linux 사이에서 파일을 바로 보내고 받으세요.\n같은 네트워크에 있으면 주소 입력도, 계정도 필요 없습니다.',
   'hero.cta.download': '다운로드',
@@ -39,8 +39,9 @@ export const ko = {
   'mock.file.build': 'build-1120.tar.gz',
 
   'compare.title': 'AirDrop과 Quick Share가\n닿지 않는 곳까지.',
+  'compare.lead': 'AirPass는 세 운영체제의 컴퓨터를 모두 연결합니다.',
   'compare.body':
-    'AirDrop은 Apple 기기끼리, Quick Share는 Android, Chromebook, Windows 사이에서 동작합니다. 그래서 한 책상 위에 놓인 Mac과 Windows PC 사이에서는 둘 다 쓸 수 없습니다. AirPass는 세 운영체제의 컴퓨터를 모두 잇습니다.',
+    'AirDrop은 Apple 기기끼리, Quick Share는 Android, Chromebook, Windows 사이에서 동작합니다. 그래서 한 책상 위에 놓인 Mac과 Windows PC 사이에서는 둘 다 쓸 수 없습니다.',
   'compare.caption': '제품별 지원 기기',
   'compare.row.mac': 'Mac',
   'compare.row.windows': 'Windows PC',
@@ -53,7 +54,7 @@ export const ko = {
   'compare.phone.quickshare': 'Android',
   'compare.phone.airpass': '준비 중',
   'compare.note':
-    '2026년 11월 기준, 각 제품의 공식 지원 범위입니다. Quick Share의 Windows 앱은 64비트 Windows 10 이상에서 동작하며, ARM 기반 PC는 지원하지 않습니다. 일부 Android 휴대폰과 Apple 기기 사이의 AirDrop 호환 기능은 표에 넣지 않았습니다. AirPass를 쓰려면 두 기기가 같은 네트워크에 있어야 합니다.',
+    '2026년 11월 기준, 각 제품의 공식 지원 범위입니다. Quick Share의 Windows 앱은 64비트 Windows 10 이상에서 동작하며, ARM 기반 PC는 지원하지 않습니다. Pixel 9, Pixel 10, Galaxy S26 등 일부 Android 휴대폰은 Quick Share로 iPhone, iPad, Mac에 파일을 보낼 수 있습니다. 이 호환 기능은 해당 휴대폰에서만 동작하며, Windows PC와 Mac 사이의 전송은 지원하지 않습니다. AirPass를 쓰려면 두 기기가 같은 네트워크에 있어야 합니다.',
 
   'steps.title': '켜고, 고르고, 보내면 끝.',
   'steps.1.title': '양쪽에서 AirPass를 켭니다',

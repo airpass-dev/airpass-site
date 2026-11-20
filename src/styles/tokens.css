@@ -118,6 +118,16 @@ a {
   text-align: left;
 }
 
+/* Supporting sentences under .intro, one step smaller. */
+.intro-small {
+  max-width: 40em;
+  margin: 12px auto 0;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.55;
+  color: var(--ink-2);
+  text-align: center;
+}
+
 .intro {
   max-width: 40em;
   margin: 24px auto 0;
@@ -273,8 +283,8 @@ a {
 }
 
 .hero-title {
-  font-size: clamp(46px, 7.6vw, 92px);
-  line-height: 1.06;
+  font-size: clamp(33px, 7vw, 84px);
+  line-height: 1.08;
   letter-spacing: -0.03em;
   font-weight: 700;
   white-space: pre-line;

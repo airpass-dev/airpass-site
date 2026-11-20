@@ -6,7 +6,7 @@ export const en: Record<keyof typeof ko, string> = {
   'nav.download': 'Download',
   'nav.faq': 'FAQ',
 
-  'hero.title': 'From any OS.\nTo any OS.',
+  'hero.title': 'From Mac to Windows.\nFrom Windows to Mac.',
   'hero.subtitle':
     'Send and receive files between Mac, Windows, and Linux.\nOn the same network, with no addresses and no accounts.',
   'hero.cta.download': 'Download',
@@ -40,8 +40,9 @@ export const en: Record<keyof typeof ko, string> = {
   'mock.file.build': 'build-1120.tar.gz',
 
   'compare.title': 'Where AirDrop and\nQuick Share stop.',
+  'compare.lead': 'AirPass connects computers on all three operating systems.',
   'compare.body':
-    'AirDrop works between Apple devices. Quick Share works between Android, Chromebook, and Windows. So between a Mac and a Windows PC on the same desk, neither one works. AirPass connects computers on all three operating systems.',
+    'AirDrop works between Apple devices. Quick Share works between Android, Chromebook, and Windows. So between a Mac and a Windows PC on the same desk, neither one works.',
   'compare.caption': 'Supported devices by product',
   'compare.row.mac': 'Mac',
   'compare.row.windows': 'Windows PC',
@@ -54,7 +55,7 @@ export const en: Record<keyof typeof ko, string> = {
   'compare.phone.quickshare': 'Android',
   'compare.phone.airpass': 'Coming later',
   'compare.note':
-    'Official support as of November 2026. The Quick Share Windows app runs on 64-bit Windows 10 and later and does not support ARM-based PCs. AirDrop compatibility between some Android phones and Apple devices is not included in the table. AirPass needs both devices on the same network.',
+    'Official support as of November 2026. The Quick Share Windows app runs on 64-bit Windows 10 and later and does not support ARM-based PCs. Some Android phones, including Pixel 9, Pixel 10, and Galaxy S26, can use Quick Share to send files to iPhone, iPad, and Mac. That compatibility runs on those phones only and does not cover transfers between a Windows PC and a Mac. AirPass needs both devices on the same network.',
 
   'steps.title': 'Open. Pick. Send.',
   'steps.1.title': 'Open AirPass on both devices',
