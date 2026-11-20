@@ -55,7 +55,7 @@ export const en: Record<keyof typeof ko, string> = {
     'Check that both devices are on the same network and that a firewall is not blocking AirPass. Guest networks and Wi-Fi with client isolation prevent devices from finding each other.',
   'faq.encryption.q': 'Are transfers encrypted?',
   'faq.encryption.a':
-    'Not in this version. Please use AirPass on networks you trust. Encryption is planned.',
+    "File contents are encrypted with keys created fresh for each connection, so someone watching the network can't read them. File names and sizes are not encrypted yet, and the other device's identity is not verified yet, so please use AirPass on networks you trust.",
 
   'footer.license': 'All rights reserved.',
   'footer.version': 'Current version'

@@ -25,6 +25,8 @@ export function detectOS(userAgent: string): DetectedOS {
 export const PLATFORMS_FOR_OS: Record<DetectedOS, PlatformKey[]> = {
   mac: ['mac-arm64', 'mac-x64'],
   windows: ['win'],
-  linux: ['linux-appimage', 'linux-deb'],
+  // AppImage is not built (see the app's electron-builder.yml); listing it
+  // would show a permanent "coming soon" card and block the one-click .deb.
+  linux: ['linux-deb'],
   unknown: []
 }

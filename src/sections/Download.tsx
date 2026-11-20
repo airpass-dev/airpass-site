@@ -9,7 +9,6 @@ const ALL_PLATFORMS: PlatformKey[] = [
   'mac-arm64',
   'mac-x64',
   'win',
-  'linux-appimage',
   'linux-deb'
 ]
 
